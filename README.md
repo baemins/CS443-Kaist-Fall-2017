@@ -15,10 +15,9 @@ Throughout this practice, you will have twenty Virtual Machine in a single virtu
 - [Exercise 4: Resource Group Creation](#Exercise4)
 - [Exercise 5: Virtual Network Creation](#Exercise5)
 - [Exercise 6: Virtual Machine Creation](#Exercise6)
-- [Exercise 6-1: Batch job to create Virtual Machine](#Exercise6-1)
+- [Exercise 6-1: Batch job to manage Virtual Machine](#Exercise6-1)
 - [Exercise 7: Connect to Virtual Machine](#Exercise7)
 - [Exercise 8: Turning off/on Virtual Machine](#Exercise8)
-- [Exercise 8-1: Batch job to turn off/on Virtual Machine](#Exercise8-1)
 - [Exercise 9: Delete the all resource](#Exercise9)
 
 <a name="Exercise1"></a>
@@ -158,7 +157,30 @@ Note: it may take few minutes to prepare your VM.
 
 
 <a name="Exercise6-1"></a>
-## Exercise 6-1: Batch job to create Virtual Machine
+## Exercise 6-1: Batch job to manage Virtual Machine
+
+This chapter shows Azure CLI Script to deal massive number of VMs.
+
+## Introduction ##
+Azure CLI script for kaist distributed computing class - deploy 20 vm batch project
+
+## Getting Started ##
+follow below instruction
+1.	Install [CLI](clihttps://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+2.	Copy deploy20vm.sh file to local control machine
+3.	Change global vals and for loop count
+4.	Run in bash
+
+## Stop VM script ##
+1.  Copy stop20vm.sh file to control machine
+3.	Change global vals and for loop count
+4.	Run in bash
+
+## Build and Test ##
+Check azure subscription maximum VM count limitation(default max 20) and global val limitation
+
+## Contribute ##
+- Dae Woo Kim(daewoo.kim@microsoft.com)
 
 
 <a name="Exercise7"></a>
@@ -177,7 +199,7 @@ Open your VM detail menu, by clicking icon at the dashboard or name at your reso
 <a name="Exercise8"></a>
 ## Exercise 8: Turning off/on Virtual Machine
 
-
+It is possible to turn on/off by individual's virtual machine at VM's menu as described at [Exercise 7: Connect to Virtual Machine](#Exercise7). For the convience, it is recommended to utilize batch process in later chapter.
 
 
 <a name="Exercise8-1"></a>
