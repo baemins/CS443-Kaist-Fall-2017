@@ -12,13 +12,13 @@ Throughout this practice, you will have twenty Virtual Machine in a single virtu
 - [Exercise 1: Create a Microsoft account](#Exercise1)
 - [Exercise 2: Subscript Access](#Exercise2)
 - [Exercise 3: Azure Portal](#Exercise3)
-- [Exercise 4: Resource Group Creation](#Exercise4)
-- [Exercise 5: Virtual Network Creation](#Exercise5)
-- [Exercise 6: Virtual Machine Creation](#Exercise6)
-- [Exercise 6-1: Batch job to manage Virtual Machine](#Exercise6-1)
-- [Exercise 7: Connect to Virtual Machine](#Exercise7)
-- [Exercise 8: Turning off/on Virtual Machine](#Exercise8)
-- [Exercise 9: Delete the all resource](#Exercise9)
+- [Exercise 4: Batch job to manage Virtual Machine](#Exercise4)
+- [Exercise 5: Resource Group Creation](#Exercise5)
+- [Exercise 6: Virtual Network Creation](#Exercise6)
+- [Exercise 7: Virtual Machine Creation](#Exercise7)
+- [Exercise 8: Connect to Virtual Machine](#Exercise8)
+- [Exercise 9: Turning off/on Virtual Machine](#Exercise9)
+- [Exercise 10: Delete the all resource](#Exercise10)
 
 <a name="Exercise1"></a>
 ## Exercise 1: Create a Microsoft account
@@ -58,9 +58,39 @@ If your account has Azure history, you may see different Subscriptions, in this 
 
 Congraturations. Now you have full access to Azure and your Subscription to perform your task. Azure Portal is a place to allow users to build, manage, and monitor everything from simple web apps to complex cloud applications in a single, unified consol. For detail, please visit [Azure Portal Introduction](https://azure.microsoft.com/en-us/features/azure-portal/) page.
 
-
 <a name="Exercise4"></a>
-## Exercise 4: Resource Group Creation
+## Exercise 4: Batch job to manage Virtual Machine
+
+This chapter shows Azure CLI Script to deal massive number of VMs. By using Script below, you may skip later exercises except [Exercise 10](Exercise10). But we strongly encourage you to read other execise to understand how Azure create and manage resources. If you're not familiar with Script, please go to the next exercise.
+
+## Introduction ##
+Azure CLI script for kaist distributed computing class - deploy 20 vm batch project
+
+## Getting Started ##
+follow below instruction
+1.	Install [CLI](clihttps://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+2.	Copy deploy20vm.sh file to local control machine
+3.	Change global vals and for loop count
+4.	Run in bash
+
+## Stop VM script ##
+1.  Copy stop20vm.sh file to control machine
+3.	Change global vals and for loop count
+4.	Run in bash
+
+Hint: You can change below code to re-start VMs from stop20vm.sh file.
+```
+    az vm start --resource-group $resource_group_name --name $vm_name_prefix$i
+```
+
+## Build and Test ##
+Check azure subscription maximum VM count limitation(default max 20) and global val limitation
+
+## Contribute ##
+- Dae Woo Kim(daewoo.kim@microsoft.com)
+
+<a name="Exercise5"></a>
+## Exercise 5: Resource Group Creation
 
 Resource Group is a container that can held the resources you assign from your any of deployments - whether it is a Virtual Machine, Database, or Website. It enables you to group related entities. In this exercise, we will create a single resource group, names 'CS443' and manage the resources inside of it together.
 
@@ -80,8 +110,8 @@ Resource Group is a container that can held the resources you assign from your a
 2. You may visually confirm new resource group, you just created.
 
 
-<a name="Exercise5"></a>
-## Exercise 5: Virtual Network Creation
+<a name="Exercise6"></a>
+## Exercise 6: Virtual Network Creation
 
 Now, we need to set up a Virtual Network, to let Azure Resources to securely communicate with others - in this exercise, mainly 20 Virtual Machines. You can refer detail explanation of Azure Virtual Network [here](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview). 
 
@@ -105,8 +135,8 @@ Choose Virtual network. Set 'Resource Manager' as a deployment model (do not cha
 8. By clicking 'Pin to dashboard', new icon of virtual network will appear at your dashboard, and you can directly access by clicking the icon.
 
 
-<a name="Exercise6"></a>
-## Exercise 6: Virtual Machine Creation
+<a name="Exercise7"></a>
+## Exercise 7: Virtual Machine Creation
 
 Click Microsoft Azure logo at top left. You will go to the default screen.
 
@@ -147,8 +177,7 @@ In Azure, many different spec of VM are offered. In this exercise, it is recomme
 3. Virtual network: CS443-Vnet
 4. Subnet: default
 5. Public IP address: (new) VM01-ip 
-    Azure allowes five public IP for free of charge. You may need public IP only for the first single VM. Later, choose 'none'.
-6. Network Security Group(firewall): (new) VM01-nsg. This is only required for the first single VM. Later, you can set the same for the all the left VMs.
+6. Network Security Group(firewall): (new) VM01-nsg. You can create every different Network Security Group for every VMs or just use one Network Security Group for all the VMs. 
 7. Diagnostic storage account: This storage account is used to collect your VM's log data. 
 
 After final validation, you can create your first VM.
@@ -156,35 +185,8 @@ After final validation, you can create your first VM.
 Note: it may take few minutes to prepare your VM.
 
 
-<a name="Exercise6-1"></a>
-## Exercise 6-1: Batch job to manage Virtual Machine
-
-This chapter shows Azure CLI Script to deal massive number of VMs.
-
-## Introduction ##
-Azure CLI script for kaist distributed computing class - deploy 20 vm batch project
-
-## Getting Started ##
-follow below instruction
-1.	Install [CLI](clihttps://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-2.	Copy deploy20vm.sh file to local control machine
-3.	Change global vals and for loop count
-4.	Run in bash
-
-## Stop VM script ##
-1.  Copy stop20vm.sh file to control machine
-3.	Change global vals and for loop count
-4.	Run in bash
-
-## Build and Test ##
-Check azure subscription maximum VM count limitation(default max 20) and global val limitation
-
-## Contribute ##
-- Dae Woo Kim(daewoo.kim@microsoft.com)
-
-
-<a name="Exercise7"></a>
-## Exercise 7: Connect to Virtual Machine
+<a name="Exercise8"></a>
+## Exercise 8: Connect to Virtual Machine
 
 ![Virtual Machine menu](Images/vm.png)
 Open your VM detail menu, by clicking icon at the dashboard or name at your resource group page.
@@ -196,19 +198,14 @@ Open your VM detail menu, by clicking icon at the dashboard or name at your reso
 5. Azure Portal provides CLI enviroment.
 
 
-<a name="Exercise8"></a>
-## Exercise 8: Turning off/on Virtual Machine
+<a name="Exercise9"></a>
+## Exercise 9: Turning off/on Virtual Machine
 
 It is possible to turn on/off by individual's virtual machine at VM's menu as described at [Exercise 7: Connect to Virtual Machine](#Exercise7). For the convience, it is recommended to utilize batch process in later chapter.
 
 
-<a name="Exercise8-1"></a>
-## Exercise 8-1: Batch job to turn off/on Virtual Machine
-
-
-
-<a name="Exercise9"></a>
-## Exercise 9: Delete the all resource
+<a name="Exercise10"></a>
+## Exercise 10: Delete the all resource
 
 In Azure, you can delete specific resource by choosing one. We're highly encoraging you to delete those resource group at once when you do not need any resources for your convenience. 
 
@@ -218,3 +215,4 @@ In Azure, you can delete specific resource by choosing one. We're highly encorag
 2. Check resource group you want to delete.
 3. Click More option icon at right end.
 4. Follow the following instruction from Azure.
+
