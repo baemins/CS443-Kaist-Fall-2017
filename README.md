@@ -29,9 +29,11 @@ Throughout this practice, you will have twenty Virtual Machine in a single virtu
 First of all, you need an account to access Microsoft Azure. Microsoft ID can be created by visiting [here](https://account.microsoft.com/account?lang=en-US). If you choose your Organization Account which ends with @kaist.ac.kr, you will see select panel at your every login.
 
 ![Microsoft Account Page](Images/Microsoft_signin.png)
+
 Click 'Sign in with Microsoft' button.
 
 ![Microsoft Account Creation](Images/CreateAccount.png)
+
 Click 'Create One'.
 
 Hint: You can use any of email account as Microsoft account. Gmail, naver accounts are welcome.
@@ -93,7 +95,8 @@ Click Microsoft Azure logo at top left. You will go to the default screen.
 
 Choose Virtual network. Set 'Resource Manager' as a deployment model (do not change) and hit 'Create'.
 
-![Vnet setup](Images/vnetsetup.png) 1. Name your Virtual network as 'CS443-Vnet'.
+![Vnet setup](Images/vnetsetup.png) 
+1. Name your Virtual network as 'CS443-Vnet'.
 2. Address Space sets the range of private IP addresses for the Virtual network. Keep the default.
 3. Again, make sure your Subscription choice.
 4. As we already created resource group, select Use existing button and one.
@@ -122,6 +125,7 @@ In Azure, there are four step to create new Virtual Machine.
 
 ### Basic setup ###
 ![Basic VM](Images/vmbasic.png)
+
 1. Name your first VM, it is highly recommended to set up a policy to name it as we will manage twenty different VMs.
 2. Choose your disk type. HDD is more ecomonic.
 3. User name - this is your administrator account for this VM.
@@ -153,6 +157,10 @@ After final validation, you can create your first VM.
 Note: it may take few minutes to prepare your VM.
 
 
+<a name="Exercise6-1"></a>
+## Exercise 6-1: Batch job to create Virtual Machine
+
+
 <a name="Exercise7"></a>
 ## Exercise 7: Connect to Virtual Machine
 
@@ -165,3 +173,26 @@ Open your VM detail menu, by clicking icon at the dashboard or name at your reso
 4. Stop: You can stop your VM here. **After your stop and start your VM, data in VM disk will be initialized.**
 5. Azure Portal provides CLI enviroment.
 
+
+<a name="Exercise8"></a>
+## Exercise 8: Turning off/on Virtual Machine
+
+
+
+
+<a name="Exercise8-1"></a>
+## Exercise 8-1: Batch job to turn off/on Virtual Machine
+
+
+
+<a name="Exercise9"></a>
+## Exercise 9: Delete the all resource
+
+In Azure, you can delete specific resource by choosing one. We're highly encoraging you to delete those resource group at once when you do not need any resources for your convenience. 
+
+![Delete Resource Group](Images/Delete.png)
+
+1. Click 'Resource groups' button at left pane.
+2. Check resource group you want to delete.
+3. Click More option icon at right end.
+4. Follow the following instruction from Azure.
