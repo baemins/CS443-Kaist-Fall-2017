@@ -2,7 +2,7 @@
 
 ## Overview ##
 
-This guideline is to aid setup of enviroment for CS443 class in Kaist Fall 2017. Please follow the document step by step and reach your TA or Microsoft when you need more assistance. 
+This guideline is to aid setup of enviroment for CS443 class in Kaist Fall 2017. Please follow the document step by step and reach your TA or [Microsoft](mailto:mib@microsoft.com) when you need more assistance. 
 
 Throughout this practice, you will have twenty Virtual Machine in a single virtual network. Please remind that your credit is limited and make sure that shutting down all the VMs or completely delete the all resource to prevent unnecessary expenditure of credit. In case of credit out, please reach your TA.
 
@@ -68,7 +68,7 @@ Azure CLI script for kaist distributed computing class - deploy 20 vm batch proj
 
 ## Getting Started ##
 follow below instruction
-1.	Install [CLI](clihttps://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+1.	Install [CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 2.	Copy deploy20vm.sh file to local control machine
 3.	Change global vals and for loop count
 4.	Run in bash
