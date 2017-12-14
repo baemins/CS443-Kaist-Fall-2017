@@ -69,16 +69,16 @@ Azure CLI script for kaist distributed computing class - deploy 20 vm batch proj
 ## Getting Started ##
 follow below instruction
 1.	Install [CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-2.	Copy deploy20vm.sh file to local control machine
+2.	Copy [deploy20vm.sh](deploy20vm.sh) file to local control machine
 3.	Change global vals and for loop count
 4.	Run in bash
 
 ## Stop VM script ##
-1.  Copy stop20vm.sh file to control machine
+1.  Copy [stop20vm.sh](stop20vm.sh) file to control machine
 3.	Change global vals and for loop count
 4.	Run in bash
 
-Hint: You can change below code to re-start VMs from stop20vm.sh file.
+Hint: You can change below code to re-start VMs from [stop20vm.sh](stop20vm.sh) file.
 ```
     az vm start --resource-group $resource_group_name --name $vm_name_prefix$i
 ```
